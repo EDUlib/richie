@@ -96,10 +96,6 @@
         {% endif %}
       {% endwith %}
 
-      <div class="course-detail__aside__social-networks">
-        {% include "social-networks/course-badges.html" with page_title=request.current_page.get_title page_url=request.current_page.get_absolute_url %}
-      </div>
-
       {% if course.duration or course.effort or current_page.publisher_is_draft %}
       <div class="course-detail__aside__synopsis">
         <dl>
@@ -142,9 +138,14 @@
                 {% render_model run "resource_link" "resource_link" %}
               </a>
             </dd>
+            <dt><a href="{{ run.extended_object.get_absolute_url }}">{% trans "course run" %}</a></dt>
             {% endif %}
           </dl>
-          {% if run.state.call_to_action %}
+          {% if run.state.call_to_action == _("enroll now") %}
+          <a class="course-detail__aside__run__block__cta" href="{{ run.resource_link }}">
+            {{ run.state.call_to_action|capfirst }}
+          </a>
+          {% elif run.state.call_to_action %}
           <a class="course-detail__aside__run__block__cta" href="{{ run.extended_object.get_absolute_url }}">
             {{ run.state.call_to_action|capfirst }}
           </a>
@@ -157,6 +158,10 @@
         {% empty %}
           <div class="course-detail__aside__run__empty">{% trans "No associated course runs" %}</div>
         {% endfor %}
+      </div>
+
+      <div class="course-detail__aside__social-networks">
+        {% include "social-networks/course-badges.html" with page_title=request.current_page.get_title page_url=request.current_page.get_absolute_url %}
       </div>
     </div>
 
