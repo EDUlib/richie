@@ -276,11 +276,11 @@ msgstr "Créer un nouveau message de blog"
 
 #: apps/courses/cms_wizards.py:619
 msgid "New person page"
-msgstr "Nouvelle page de personne"
+msgstr "Nouvelle page d'animateur"
 
 #: apps/courses/cms_wizards.py:620
 msgid "Create a new person page"
-msgstr "Créer une nouvelle page de personne"
+msgstr "Créer une nouvelle page d'animateur"
 
 #: apps/courses/defaults.py:9
 msgid "Admin"
@@ -355,6 +355,7 @@ msgid "category plugin"
 msgstr "plugin de catégorie"
 
 #: apps/courses/models/course.py:41 apps/courses/models/course.py:42
+#: apps/courses/templates/courses/cms/course_detail.html:144
 msgid "enroll now"
 msgstr "s’inscrire"
 
@@ -395,8 +396,8 @@ msgid "course"
 msgstr "cours"
 
 #: apps/courses/models/course.py:437
-#: apps/courses/templates/courses/cms/course_detail.html:139
-#: apps/courses/templates/courses/cms/course_run_detail.html:74
+#: apps/courses/templates/courses/cms/course_detail.html:135
+#: apps/courses/templates/courses/cms/course_run_detail.html:71
 msgid "Resource link"
 msgstr "Lien de la ressource"
 
@@ -421,6 +422,7 @@ msgid "The list of languages in which the course content is available."
 msgstr "Les langues dans lesquelles le contenu du cours est disponible."
 
 #: apps/courses/models/course.py:458
+#: apps/courses/templates/courses/cms/course_detail.html:141
 msgid "course run"
 msgstr "session de cours"
 
@@ -470,11 +472,11 @@ msgstr "plugin d'institution"
 
 #: apps/courses/models/person.py:33
 msgid "person"
-msgstr "personne"
+msgstr "animateur"
 
 #: apps/courses/models/person.py:131
 msgid "person plugin"
-msgstr "plugin de personne"
+msgstr "plugin de'animateur"
 
 #: apps/courses/models/role.py:20
 msgid "role"
@@ -550,11 +552,11 @@ msgstr "Page d'article"
 
 #: apps/courses/settings/__init__.py:40
 msgid "Person page"
-msgstr "Page de personne"
+msgstr "Page d'animateur"
 
 #: apps/courses/settings/__init__.py:41
 msgid "Person list"
-msgstr "Liste des personnes"
+msgstr "Liste des animateurs"
 
 #: apps/courses/settings/__init__.py:42
 msgid "Search"
@@ -624,12 +626,12 @@ msgid "Complementary information"
 msgstr "Informations complémentaires"
 
 #: apps/courses/settings/__init__.py:136
-#: apps/courses/templates/courses/cms/fragment_course_content.html:110
+#: apps/courses/templates/courses/cms/fragment_course_content.html:107
 msgid "License for the course content"
 msgstr "Licence pour le contenu du cours"
 
 #: apps/courses/settings/__init__.py:141
-#: apps/courses/templates/courses/cms/fragment_course_content.html:119
+#: apps/courses/templates/courses/cms/fragment_course_content.html:116
 msgid "License for the content created by course participants"
 msgstr "Licence pour le contenu créé par les participants du cours"
 
@@ -645,7 +647,6 @@ msgstr "Icône"
 #: apps/courses/settings/__init__.py:155 apps/courses/settings/__init__.py:215
 #: apps/courses/templates/courses/cms/fragment_course_content.html:69
 #: apps/courses/templates/courses/cms/person_detail.html:50
-#: apps/search/defaults.py:110
 msgid "Organizations"
 msgstr "Institutions"
 
@@ -749,7 +750,7 @@ msgstr "Billets de blog liés"
 #: apps/courses/templates/courses/cms/category_detail.html:110
 #: apps/courses/templates/courses/cms/organization_detail.html:71
 msgid "Related persons"
-msgstr "Personnes liées"
+msgstr "Animateurs liées"
 
 #: apps/courses/templates/courses/cms/category_list.html:14
 msgid "No categories"
@@ -782,43 +783,42 @@ msgstr "Ajouter une image pour la couverture du cours sur son aperçu."
 msgid "course cover image"
 msgstr "image de couverture du cours"
 
-#: apps/courses/templates/courses/cms/course_detail.html:108
+#: apps/courses/templates/courses/cms/course_detail.html:104
 msgid "Duration:"
 msgstr "Durée :"
 
-#: apps/courses/templates/courses/cms/course_detail.html:112
+#: apps/courses/templates/courses/cms/course_detail.html:108
 msgid "Effort:"
 msgstr "Effort :"
 
-#: apps/courses/templates/courses/cms/course_detail.html:121
+#: apps/courses/templates/courses/cms/course_detail.html:117
 msgid "Course runs"
 msgstr "Sessions de cours"
 
-#: apps/courses/templates/courses/cms/course_detail.html:125
+#: apps/courses/templates/courses/cms/course_detail.html:121
 msgid "Enrollment"
 msgstr "Inscription"
 
-#: apps/courses/templates/courses/cms/course_detail.html:129
-#: apps/courses/templates/courses/cms/course_detail.html:135
+#: apps/courses/templates/courses/cms/course_detail.html:125
+#: apps/courses/templates/courses/cms/course_detail.html:131
 msgid "From"
 msgstr "Du"
 
-#: apps/courses/templates/courses/cms/course_detail.html:129
-#: apps/courses/templates/courses/cms/course_detail.html:135
+#: apps/courses/templates/courses/cms/course_detail.html:125
+#: apps/courses/templates/courses/cms/course_detail.html:131
 msgid "to"
 msgstr "au"
 
-#: apps/courses/templates/courses/cms/course_detail.html:131
+#: apps/courses/templates/courses/cms/course_detail.html:127
 msgid "Course"
 msgstr "Cours"
 
-#: apps/courses/templates/courses/cms/course_detail.html:137
+#: apps/courses/templates/courses/cms/course_detail.html:133
 #: apps/courses/templates/courses/cms/course_run_detail.html:59
-#: apps/search/defaults.py:69
 msgid "Languages"
 msgstr "Langues"
 
-#: apps/courses/templates/courses/cms/course_detail.html:158
+#: apps/courses/templates/courses/cms/course_detail.html:159
 msgid "No associated course runs"
 msgstr "Aucune session de cours n'est disponible"
 
@@ -878,27 +878,27 @@ msgstr "Évaluation et attestation"
 msgid "How is progress evaluated and/or certified?"
 msgstr "Comment les étudiants sont ils évalués ou attestés ?"
 
-#: apps/courses/templates/courses/cms/fragment_course_content.html:73
+#: apps/courses/templates/courses/cms/fragment_course_content.html:74
 msgid "What are the organizations publishing this course?"
 msgstr "Quelles sont les institutions publiant ce cours?"
 
-#: apps/courses/templates/courses/cms/fragment_course_content.html:86
+#: apps/courses/templates/courses/cms/fragment_course_content.html:84
 msgid "Course team"
 msgstr "Équipe pédagogique"
 
-#: apps/courses/templates/courses/cms/fragment_course_content.html:90
+#: apps/courses/templates/courses/cms/fragment_course_content.html:89
 msgid "Who are the teachers in the course team?"
 msgstr "Qui sont les enseignants de l’équipe pédagogique ?"
 
-#: apps/courses/templates/courses/cms/fragment_course_content.html:107
+#: apps/courses/templates/courses/cms/fragment_course_content.html:104
 msgid "License"
 msgstr "Licence"
 
-#: apps/courses/templates/courses/cms/fragment_course_content.html:113
+#: apps/courses/templates/courses/cms/fragment_course_content.html:110
 msgid "What is the license for the course content?"
 msgstr "Quelle est la licence pour le contenu du cours ?"
 
-#: apps/courses/templates/courses/cms/fragment_course_content.html:122
+#: apps/courses/templates/courses/cms/fragment_course_content.html:119
 msgid "What is the license for the content created by course participants?"
 msgstr "Quelle est la licence pour le contenu créé par les participants du cours ?"
 
@@ -946,31 +946,23 @@ msgstr "Messages de blog"
 
 #: apps/courses/templates/courses/cms/person_list.html:14
 msgid "No persons"
-msgstr "Pas de personnes"
-
-#: apps/search/defaults.py:44
-msgid "New courses"
-msgstr "Nouveaux cours"
-
-#: apps/search/defaults.py:48
-msgid "First session"
-msgstr "Première session"
+msgstr "Pas d'animateur"
 
 #: apps/search/defaults.py:59
 msgid "Availability"
 msgstr "Disponibilité"
 
 #: apps/search/defaults.py:84
-msgid "Subjects"
-msgstr "Sujets"
+msgid "Leadership Dimensions"
+msgstr "Dimensions du leadership"
 
 #: apps/search/defaults.py:97
-msgid "Levels"
-msgstr "Niveaux"
+msgid "Competencies"
+msgstr "Compétences-clés"
 
 #: apps/search/defaults.py:122
 msgid "Persons"
-msgstr "Personnes"
+msgstr "Animateurs"
 
 #: apps/search/filter_definitions/courses.py:379
 msgid "Open for enrollment"
@@ -1111,3 +1103,14 @@ msgid_plural "Ensure this text has at most %(limit_value)d characters (it has %(
 msgstr[0] "Assurez-vous que ce texte a au maximum %(limit_value)d caractère (il a %(show_value)d)."
 msgstr[1] "Assurez-vous que ce texte a au maximum %(limit_value)d caractères (il a %(show_value)d)."
 
+#~ msgid "New courses"
+#~ msgstr "Nouveaux cours"
+
+#~ msgid "First session"
+#~ msgstr "Première session"
+
+#~ msgid "Subjects"
+#~ msgstr "Sujets"
+
+#~ msgid "Levels"
+#~ msgstr "Niveaux"
