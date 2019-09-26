@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: richie\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-15 15:04+0000\n"
+"POT-Creation-Date: 2019-09-26 15:29+0200\n"
 "PO-Revision-Date: 2019-07-16 15:58\n"
 "Last-Translator: David Truong (2018D))\n"
 "Language-Team: French, Canada\n"
@@ -95,15 +95,7 @@ msgstr "L'enregistrement de {:d} choix nécessite l'enregistrement d'un CharFiel
 msgid "Switch to %(lang.name_translated)s"
 msgstr "Basculer vers %(lang.name_translated)s"
 
-#: apps/core/templates/richie/base.html:35
-msgid "Sign up"
-msgstr "Inscription"
-
-#: apps/core/templates/richie/base.html:38
-msgid "Login"
-msgstr "Connexion"
-
-#: apps/core/templates/richie/base.html:63
+#: apps/core/templates/richie/base.html:56
 msgid "All Rights Reserved."
 msgstr "Tous droits réservés."
 
@@ -179,7 +171,7 @@ msgstr "Prise d'un instantanée de cette page..."
 
 #: apps/courses/cms_toolbars.py:109
 msgid "This will place a copy of this page as its child and move all its courseruns as children of its new copy."
-msgstr "Ceci copie la page vers une page enfant et les sessions de cours actuelles deviennent des enfants de cette copie."
+msgstr "Ceci copie la page vers une page enfant et les séances de cours actuelles deviennent des enfants de cette copie."
 
 #: apps/courses/cms_wizards.py:58
 msgid "New page"
@@ -240,15 +232,15 @@ msgstr "Capture instantanée de ce cours"
 
 #: apps/courses/cms_wizards.py:279
 msgid "Tick this box if you want to snapshot the current version of the course and link the new course run to a new version of the course."
-msgstr "Cocher cette case si vous voulez faire une capture instantanée de la version actuelle du cours et attacher la nouvelle session de cours à une nouvelle version du cours."
+msgstr "Cocher cette case si vous voulez faire une capture instantanée de la version actuelle du cours et attacher la nouvelle séance de cours à une nouvelle version du cours."
 
 #: apps/courses/cms_wizards.py:396
 msgid "New course run page"
-msgstr "Nouvelle page de session de cours"
+msgstr "Nouvelle page de séance de cours"
 
 #: apps/courses/cms_wizards.py:397
 msgid "Create a new course run page"
-msgstr "Créez une nouvelle page de session de cours"
+msgstr "Créez une nouvelle page de séance de cours"
 
 #: apps/courses/cms_wizards.py:449
 msgid "New organization page"
@@ -355,7 +347,7 @@ msgid "category plugin"
 msgstr "plugin de catégorie"
 
 #: apps/courses/models/course.py:41 apps/courses/models/course.py:42
-#: apps/courses/templates/courses/cms/course_detail.html:144
+#: apps/courses/templates/courses/cms/course_detail.html:127
 msgid "enroll now"
 msgstr "s’inscrire"
 
@@ -396,7 +388,7 @@ msgid "course"
 msgstr "cours"
 
 #: apps/courses/models/course.py:437
-#: apps/courses/templates/courses/cms/course_detail.html:135
+#: apps/courses/templates/courses/cms/course_detail.html:118
 #: apps/courses/templates/courses/cms/course_run_detail.html:71
 msgid "Resource link"
 msgstr "Lien de la ressource"
@@ -422,9 +414,9 @@ msgid "The list of languages in which the course content is available."
 msgstr "Les langues dans lesquelles le contenu du cours est disponible."
 
 #: apps/courses/models/course.py:458
-#: apps/courses/templates/courses/cms/course_detail.html:141
+#: apps/courses/templates/courses/cms/course_detail.html:124
 msgid "course run"
-msgstr "session de cours"
+msgstr "séance de cours"
 
 #: apps/courses/models/course.py:564
 msgid "course plugin"
@@ -524,7 +516,7 @@ msgstr "Page de cours"
 
 #: apps/courses/settings/__init__.py:33
 msgid "Course run page"
-msgstr "Page de session de cours"
+msgstr "Page de séance de cours"
 
 #: apps/courses/settings/__init__.py:34
 msgid "Organization list"
@@ -604,7 +596,6 @@ msgid "What you will learn"
 msgstr "Ce que vous apprendrez"
 
 #: apps/courses/settings/__init__.py:111
-#: apps/courses/templates/courses/cms/fragment_course_content.html:30
 msgid "Format"
 msgstr "Format"
 
@@ -783,44 +774,46 @@ msgstr "Ajouter une image pour la couverture du cours sur son aperçu."
 msgid "course cover image"
 msgstr "image de couverture du cours"
 
-#: apps/courses/templates/courses/cms/course_detail.html:104
+#: apps/courses/templates/courses/cms/course_detail.html:87
 msgid "Duration:"
 msgstr "Durée :"
 
-#: apps/courses/templates/courses/cms/course_detail.html:108
+#: apps/courses/templates/courses/cms/course_detail.html:91
 msgid "Effort:"
 msgstr "Effort :"
 
-#: apps/courses/templates/courses/cms/course_detail.html:117
+#: apps/courses/templates/courses/cms/course_detail.html:100
+#: apps/courses/templates/courses/cms/fragment_course_content.html:30
+#: apps/courses/templates/courses/cms/fragment_course_content.html:32
 msgid "Course runs"
-msgstr "Sessions de cours"
+msgstr "Séances de cours"
 
-#: apps/courses/templates/courses/cms/course_detail.html:121
+#: apps/courses/templates/courses/cms/course_detail.html:104
 msgid "Enrollment"
 msgstr "Inscription"
 
-#: apps/courses/templates/courses/cms/course_detail.html:125
-#: apps/courses/templates/courses/cms/course_detail.html:131
+#: apps/courses/templates/courses/cms/course_detail.html:108
+#: apps/courses/templates/courses/cms/course_detail.html:114
 msgid "From"
 msgstr "Du"
 
-#: apps/courses/templates/courses/cms/course_detail.html:125
-#: apps/courses/templates/courses/cms/course_detail.html:131
+#: apps/courses/templates/courses/cms/course_detail.html:108
+#: apps/courses/templates/courses/cms/course_detail.html:114
 msgid "to"
 msgstr "au"
 
-#: apps/courses/templates/courses/cms/course_detail.html:127
+#: apps/courses/templates/courses/cms/course_detail.html:110
 msgid "Course"
 msgstr "Cours"
 
-#: apps/courses/templates/courses/cms/course_detail.html:133
+#: apps/courses/templates/courses/cms/course_detail.html:116
 #: apps/courses/templates/courses/cms/course_run_detail.html:59
 msgid "Languages"
 msgstr "Langues"
 
-#: apps/courses/templates/courses/cms/course_detail.html:159
+#: apps/courses/templates/courses/cms/course_detail.html:142
 msgid "No associated course runs"
-msgstr "Aucune session de cours n'est disponible"
+msgstr "Aucune séance de cours n'est disponible"
 
 #: apps/courses/templates/courses/cms/course_run_detail.html:40
 msgid "Details"
@@ -853,10 +846,6 @@ msgstr "Entrez une description de votre cours."
 #: apps/courses/templates/courses/cms/fragment_course_content.html:23
 msgid "At the end of this course, you will be able to:"
 msgstr "À la fin de ce cours, vous pourrez :"
-
-#: apps/courses/templates/courses/cms/fragment_course_content.html:32
-msgid "How is the course structured?"
-msgstr "Quelle est la structure du cours ?"
 
 #: apps/courses/templates/courses/cms/fragment_course_content.html:41
 msgid "What are the prerequisites to follow this course?"
@@ -960,7 +949,7 @@ msgstr "Dimensions du leadership"
 msgid "Competencies"
 msgstr "Compétences-clés"
 
-#: apps/search/defaults.py:122
+#: apps/search/defaults.py:135
 msgid "Persons"
 msgstr "Animateurs"
 
