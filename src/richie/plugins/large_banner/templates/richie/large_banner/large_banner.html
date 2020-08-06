@@ -11,9 +11,8 @@
             alt="banner">
     {% endif %}
     <div class="large-banner__body">
-        <h1 class="large-banner__title">{{ instance.title }}</h1>
         {% if instance.logo %}
-            <img src="{% thumbnail instance.logo 200x100 crop='smart' %}" class="large-banner__logo" alt="{{ instance.logo_alt_text }}">
+            <img src="{% thumbnail instance.logo 1280x400 crop='smart' %}" class="large-banner__logo" alt="{{ instance.logo_alt_text }}">
         {% endif %}
         {% if instance.content %}
             <div class="large-banner__content">{{ instance.content|safe }}</div>
