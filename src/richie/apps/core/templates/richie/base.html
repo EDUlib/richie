@@ -86,14 +86,14 @@
 
                         <ul class="topbar__list topbar__list--controls">
                             {% block userlogin %}
-                                {% if AUTHENTICATION %}
-                                    <li class="topbar__item topbar__item--login richie-react richie-react--user-login" data-props='{"profileUrls": {{ AUTHENTICATION.profile_urls }}}'></li>
-                                {% endif %}
+                            <li class="topbar__item topbar__item--hollow">
+                                <a href="https://cours.edulib.org/register">{% trans "Sign up" %}</a>
+                            </li>
+                            <li class="topbar__item topbar__item--cta">
+                                <a href="https://cours.edulib.org/login">{% trans "Login" %}</a>
+                            </li>
                             {% endblock userlogin %}
                             {% block topbar_contact %}
-                            <li class="topbar__item topbar__item--cta">
-                                <a href="#">{% trans "Contact us" %}</a>
-                            </li>
                             {% endblock topbar_contact %}
                         </ul>
 
@@ -120,7 +120,6 @@
             <div class="body-footer">
                 <div class="body-footer__container">
                     <div class="body-footer__menu">
-                        <p class="body-footer__subtitle">{% trans "Learn more" %}</p>
                         <div class="body-footer__items">
                             {% static_placeholder "footer" %}
                         </div>
@@ -131,9 +130,7 @@
                         </a>
                     </div>
                     <div class="body-footer__insert">
-                        {% block body_footer_title %}
-                            <p class="body-footer__title">{% trans "Life-changing learning!" %}</p>
-                        {% endblock body_footer_title %}
+                        {% block body_footer_title %}{% endblock body_footer_title %}
                         {% language_chooser "menu/language_menu.html" %}
                         <div class="body-footer__badges">
                             {% include "social-networks/footer-badges.html" %}
@@ -144,12 +141,17 @@
             <div class="body-mentions">
                 <div class="body-mentions__container">
                     {% block body_mentions %}
-                    <div class="body-mentions__poweredby">
-                        <a href="https://richie.education">
-                            <small>{% trans "Powered by" %}</small>
-                            <strong>Richie</strong>
-                        </a>
-                    </div>
+                        <div class="body-mentions__copyright">
+                            <p>{% now "Y" %} &copy; EDUlib {% trans "All Rights Reserved." %}</p>
+                        </div>
+                        <div class="body-mentions__poweredby">
+                            <p>
+                                <small>{% trans "Powered by" %}</small>
+                                <a class="body-footer__poweredby__link" href="https://github.com/openfun/richie"><strong>Richie</strong></a>
+                                &
+                                <a class="body-footer__poweredby__link" href="https://open.edx.org/"><strong>open edX</strong></a>
+                            </p>
+                        </div>
                     {% endblock body_mentions %}
                 </div>
             </div>

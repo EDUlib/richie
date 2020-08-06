@@ -31,17 +31,17 @@ FACET_COUNTS_DEFAULT_LIMIT = getattr(settings, "RICHIE_FACET_COUNTS_DEFAULT_LIMI
 FACET_COUNTS_MAX_LIMIT = getattr(settings, "RICHIE_FACET_COUNTS_MAX_LIMIT", 50)
 
 FILTERS_CONFIGURATION = [
-    (
-        "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
-        {
-            "fragment_map": {"new": [{"term": {"is_new": True}}]},
-            "human_name": _("New courses"),
-            "min_doc_count": 0,
-            "name": "new",
-            "position": 0,
-            "values": {"new": _("First session")},
-        },
-    ),
+    #(
+    #    "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
+    #    {
+    #        "fragment_map": {"new": [{"term": {"is_new": True}}]},
+    #        "human_name": _("New courses"),
+    #        "min_doc_count": 0,
+    #        "name": "new",
+    #        "position": 0,
+    #        "values": {"new": _("First session")},
+    #    },
+    #),
     (
         "richie.apps.search.filter_definitions.NestingWrapper",
         {
@@ -85,19 +85,19 @@ FILTERS_CONFIGURATION = [
             "term": "categories",
         },
     ),
-    (
-        "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
-        {
-            "human_name": _("Levels"),
-            "is_autocompletable": True,
-            "is_searchable": True,
-            "min_doc_count": 0,
-            "name": "levels",
-            "position": 3,
-            "reverse_id": "levels",
-            "term": "categories",
-        },
-    ),
+    #(
+    #    "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
+    #    {
+    #        "human_name": _("Levels"),
+    #        "is_autocompletable": True,
+    #        "is_searchable": True,
+    #        "min_doc_count": 0,
+    #        "name": "levels",
+    #        "position": 3,
+    #        "reverse_id": "levels",
+    #        "term": "categories",
+    #    },
+    #),
     (
         "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
         {

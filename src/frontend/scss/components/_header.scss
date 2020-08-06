@@ -303,6 +303,37 @@
       }
     }
 
+    &--hollow {
+      align-items: center;
+
+      a {
+        @include button-size(
+          $btn-padding-y,
+          $btn-padding-x,
+          $btn-font-size,
+          $btn-line-height,
+          2rem
+        );
+        @include font-size($font-size-base);
+        justify-content: center;
+        color: r-theme-val(topbar, item-cta-hollow-color);
+        background: r-theme-val(topbar, item-cta-hollow-background);
+        @if r-theme-val(topbar, item-cta-border) {
+          border: $onepixel solid r-theme-val(topbar, item-cta-hollow-border);
+        }
+
+        @include media-breakpoint-up($r-topbar-breakpoint) {
+          justify-content: flex-start;
+        }
+
+        &:hover {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
     // Item divider
     & + #{$item-selector} {
       @if r-theme-val(topbar, item-divider-border) {
