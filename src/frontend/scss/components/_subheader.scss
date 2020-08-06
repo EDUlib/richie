@@ -128,6 +128,7 @@ $r-subheader-search-title-width: 19rem !default; // aligned on computed search r
   // Aside subheader container alongside 'main' content
   &__aside {
     text-align: center;
+    padding-top: 2rem;
 
     @include media-breakpoint-up(lg) {
       @include sv-flex(1, 0, 25%);
@@ -314,18 +315,6 @@ $r-subheader-search-title-width: 19rem !default; // aligned on computed search r
 
       // Insert bottom curves
       &::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 5vw;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-image: r-theme-val(subheader-alt, background-image);
-        background-repeat: no-repeat;
-        background-position: top left;
-        background-size: 100% 100%;
       }
     }
   }

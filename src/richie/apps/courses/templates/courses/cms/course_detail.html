@@ -127,7 +127,6 @@
                     {% endblock social_networks %}
 
                     {% block contact %}
-                        <a href="#" class="subheader__cta">{% trans "Contact us" %}</a>
                     {% endblock contact %}
                 </div>
             </div>
@@ -188,13 +187,6 @@
                 {% block fragment_content %}
                 <div class="course-detail__block course-detail__primary-group">
                     {% block skills %}
-                        {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_skills" %}
-                        <div class="course-detail__row course-detail__skills">
-                            <h2 class="course-detail__title">{% blocktrans context "course_detail__title" %}What you will learn{% endblocktrans %}</h2>
-                            <p>{% trans "At the end of this course, you will be able to:" %}</p>
-                            {% placeholder "course_skills" %}
-                        </div>
-                        {% endif %}
                     {% endblock skills %}
 
                     {% block description %}
@@ -207,38 +199,12 @@
                     {% endblock description %}
 
                     {% block format %}
-                        {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_format" %}
-                            <section class="course-detail__row course-detail__format">
-                                <h2 class="course-detail__title">{% blocktrans context "course_detail__title" %}Format{% endblocktrans %}</h2>
-                                {% placeholder "course_format" or %}
-                                <p>{% trans 'How is the course structured?' %}</p>
-                                {% endplaceholder %}
-                            </section>
-                        {% endif %}
                     {% endblock format %}
 
                     {% block prerequisites %}
-                        {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_prerequisites" %}
-                            <section class="course-detail__prerequisites course-detail__row course-detail__prerequisites">
-                                <h2 class="course-detail__title">{% blocktrans context "course_detail__title" %}Prerequisites{% endblocktrans %}</h2>
-                                {% placeholder "course_prerequisites" or %}
-                                    <p>{% trans 'What are the prerequisites to follow this course?' %}</p>
-                                {% endplaceholder %}
-                            </section>
-                        {% endif %}
                     {% endblock prerequisites %}
 
                     {% block assessment %}
-                        {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_assessment" %}
-                        <section class="course-detail__row course-detail__assessment">
-                            <h2 class="course-detail__title">{% blocktrans context "course_detail__title" %}Assessment and certification{% endblocktrans %}</h2>
-                            {% placeholder "course_assessment" or %}
-                                <p class="course-detail__assessment__placeholder">
-                                    {% trans "How is progress evaluated and/or certified?" %}
-                                </p>
-                            {% endplaceholder %}
-                        </section>
-                        {% endif %}
                     {% endblock assessment %}
                 </div>
 
@@ -344,6 +310,14 @@
             {% endif %}
         {% endblock team %}
 
+        {% block information %}
+            {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_information" %}
+                <div class="course-detail__row course-detail__information">
+                    {% placeholder "course_information" %}
+                </div>
+            {% endif %}
+        {% endblock information %}
+
         {% block organizations %}
             {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_organizations" %}
             <div class="course-detail__organizations course-detail__block">
@@ -363,38 +337,7 @@
             {% endif %}
         {% endblock organizations %}
 
-        {% block information %}
-            {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_information" %}
-                <div class="course-detail__row course-detail__information">
-                    {% placeholder "course_information" %}
-                </div>
-            {% endif %}
-        {% endblock information %}
-
         {% block licenses %}
-            <div class="course-detail__license course-detail__block course-detail__block--divider">
-                <section class="course-detail__row">
-                    <h2 class="course-detail__title">{% blocktrans context "course_detail__title" %}License{% endblocktrans %}</h2>
-
-                    <div class="course-detail__item">
-                        <h3 class="course-detail__label">{% trans 'License for the course content' %}</h3>
-                        {% with header_level=4 %}
-                            {% placeholder "course_license_content" page or %}
-                                <p>{% trans 'What is the license for the course content?' %}</p>
-                            {% endplaceholder %}
-                        {% endwith %}
-                    </div>
-
-                    <div class="course-detail__item">
-                        <h3 class="course-detail__label">{% trans 'License for the content created by course participants' %}</h3>
-                        {% with header_level=4 %}
-                            {% placeholder "course_license_participation" page or %}
-                                <p>{% trans 'What is the license for the content created by course participants?' %}</p>
-                            {% endplaceholder %}
-                        {% endwith %}
-                    </div>
-                </section>
-            </div>
         {% endblock licenses %}
     </div>
     {% endblock fragment_relations %}
