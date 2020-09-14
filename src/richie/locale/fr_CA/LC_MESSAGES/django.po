@@ -101,6 +101,29 @@ msgid "You are here:"
 msgstr "Vous êtes ici:"
 
 #: apps/core/templates/richie/base.html:94
+#: apps/core/templates/menu/language_menu.html:5
+msgid "Language:"
+msgstr "Langue:"
+
+#: apps/core/templates/menu/language_menu.html:11
+#, python-format
+msgid "%(code)s, currently in %(name)s"
+msgstr "%(code)s, actuellement en %(name)s"
+
+#: apps/core/templates/menu/language_menu.html:18
+#, python-format
+msgid "%(code)s, switch to %(name)s"
+msgstr "%(code)s, basculer vers %(name)s"
+
+#: apps/core/templates/richie/base.html:91
+msgid "Sign up"
+msgstr "Inscription"
+
+#: apps/core/templates/richie/base.html:94
+msgid "Login"
+msgstr "Connexion"
+
+#: apps/core/templates/richie/base.html:95
 #: apps/courses/templates/courses/cms/course_detail.html:130
 msgid "Contact us"
 msgstr "Contactez-nous"
@@ -159,13 +182,13 @@ msgstr "Page suivante %(page)s"
 
 #: apps/core/templates/social-networks/blogpost-badges.html:3
 #, python-format
-msgid "Richie news: %(title)s"
-msgstr "Actualités Richie : %(title)s"
+msgid "EDUlib news: %(title)s"
+msgstr "Actualités EDUlib : %(title)s"
 
 #: apps/core/templates/social-networks/blogpost-badges.html:4
 #, python-format
-msgid "Richie news: %(title)s %(url)s"
-msgstr "Actualités Richie : %(title)s %(url)s"
+msgid "EDUlib news: %(title)s %(url)s"
+msgstr "Actualités EDUlib : %(title)s %(url)s"
 
 #: apps/core/templates/social-networks/blogpost-badges.html:10
 #: apps/core/templates/social-networks/course-badges.html:10
@@ -188,13 +211,13 @@ msgid "Share by Email"
 msgstr "Partager par courriel"
 
 #: apps/core/templates/social-networks/course-badges.html:3
-msgid "Follow a course online with Richie"
-msgstr "Suivre un cours en ligne avec Richie"
+msgid "Follow a course online with EDUlib"
+msgstr "Suivre un cours en ligne avec EDUlib"
 
 #: apps/core/templates/social-networks/course-badges.html:4
 #, python-format
-msgid "I just enrolled to the course \"%(title)s\" on Richie: %(url)s"
-msgstr "Je me suis juste inscrit au cours «%(title)s» sur Richie : %(url)s"
+msgid "I just enrolled to the course \"%(title)s\" on EDUlib : %(url)s"
+msgstr "Je me suis juste inscrit au cours «%(title)s» sur EDUlib : %(url)s"
 
 #: apps/core/templates/social-networks/footer-badges.html:8
 msgid "Facebook"
