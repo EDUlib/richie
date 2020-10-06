@@ -229,27 +229,6 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
 
     # LMS
     LMS_BACKENDS = [
-        {
-            # We configure default values that work with the test configuration of
-            # github.com/openfun/openedx-docker.
-            "BACKEND": values.Value(
-                "richie.apps.courses.lms.base.DemoLMSBackend",
-                environ_name="EDX_BACKEND",
-                environ_prefix=None,
-            ),
-            "SELECTOR_REGEX": values.Value(
-                r".*", environ_name="EDX_SELECTOR_REGEX", environ_prefix=None
-            ),
-            "COURSE_REGEX": values.Value(
-                r"^(?P<course_id>.*)$",
-                environ_name="EDX_COURSE_REGEX",
-                environ_prefix=None,
-            ),
-            "API_TOKEN": values.Value(
-                environ_name="EDX_API_TOKEN", environ_prefix=None
-            ),
-            "BASE_URL": values.Value(environ_name="EDX_BASE_URL", environ_prefix=None),
-        }
     ]
 
     # Custom links to access to LMS profile views from richie
