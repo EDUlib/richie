@@ -264,33 +264,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     }
 
     # LMS
-    RICHIE_LMS_BACKENDS = [
-        {
-            # We configure default values that work with the test configuration of
-            # github.com/openfun/openedx-docker.
-            "BASE_URL": values.Value(environ_name="EDX_BASE_URL", environ_prefix=None),
-            # Django backend
-            "BACKEND": values.Value(
-                "richie.apps.courses.lms.edx.EdXLMSBackend",
-                environ_name="EDX_BACKEND",
-                environ_prefix=None,
-            ),
-            "COURSE_REGEX": values.Value(
-                r"^.*/courses/(?P<course_id>.*)/course/?$",
-                environ_name="EDX_COURSE_REGEX",
-                environ_prefix=None,
-            ),
-            "DEFAULT_COURSE_RUN_SYNC_MODE": "sync_to_public",
-            # React frontend
-            "JS_BACKEND": values.Value(
-                "base", environ_name="EDX_JS_BACKEND", environ_prefix=None
-            ),
-            "JS_COURSE_REGEX": values.Value(
-                r"^.*/courses/(?<course_id>.*)/course/?$",
-                environ_name="EDX_JS_COURSE_REGEX",
-                environ_prefix=None,
-            ),
-        }
+    LMS_BACKENDS = [
     ]
     RICHIE_COURSE_RUN_SYNC_SECRETS = values.ListValue([])
 
