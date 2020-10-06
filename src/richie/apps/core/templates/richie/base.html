@@ -86,16 +86,9 @@
 
                         <ul class="topbar__list topbar__list--controls">
                             {% block userlogin %}
-<<<<<<< HEAD
-                            <li class="topbar__item topbar__item--login richie-react richie-react--user-login"
-                                data-props='{"loginUrl": "{% url 'social:begin' 'edx-oauth2' %}?next={{ request.path }}", "logoutUrl": "{% url 'logout' %}", "signupUrl": "{% url 'admin:index' %}"}'></li>
-                            {% endblock userlogin %}
-                            {% block topbar_contact %}
-=======
                             <li class="topbar__item topbar__item--hollow">
                                 <a href="https://cours.edulib.org/register">{% trans "Sign up" %}</a>
                             </li>
->>>>>>> 🚀(edulib) fork from upstream master
                             <li class="topbar__item topbar__item--cta">
                                 <a href="https://cours.edulib.org/login">{% trans "Login" %}</a>
                             </li>
