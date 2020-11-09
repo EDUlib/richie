@@ -86,7 +86,6 @@
 
                         <ul class="topbar__list topbar__list--controls">
                             {% block userlogin %}
-                            <li class="topbar__item topbar__item--login richie-react richie-react--user-login" data-props='{"profileUrls": {{ AUTHENTICATION.PROFILE_URLS }}}'></li>
                             <li class="topbar__item topbar__item--hollow">
                                 <a href="https://cours.edulib.org/register">{% trans "Sign up" %}</a>
                             </li>
@@ -121,14 +120,9 @@
             <div class="body-footer">
                 <div class="body-footer__container">
                     <div class="body-footer__menu">
-<<<<<<< HEAD
-                        <p class="body-footer__subtitle">{% trans "Learn more" %}</p>
                         <div class="body-footer__items">
                             {% static_placeholder "footer" %}
                         </div>
-=======
-                        {% static_placeholder "footer" %}
->>>>>>> 🚀(edulib) fork from upstream master
                     </div>
                     <div class="body-footer__brand">
                         <a href="/">
