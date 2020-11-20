@@ -1425,8 +1425,8 @@ msgid "Subjects"
 msgstr "Sujets"
 
 #: apps/search/defaults.py:91
-msgid "Levels"
-msgstr "Niveaux"
+msgid "Hosted by"
+msgstr "Hébergé par"
 
 #: apps/search/defaults.py:116
 msgid "Persons"
