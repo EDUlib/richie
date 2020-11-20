@@ -1420,15 +1420,19 @@ msgstr "Première session"
 msgid "Availability"
 msgstr "Disponibilité"
 
-#: apps/search/defaults.py:78
-msgid "Subjects"
-msgstr "Sujets"
-
-#: apps/search/defaults.py:91
+#: apps/search/defaults.py:90
 msgid "Hosted by"
 msgstr "Hébergé par"
 
+#: apps/search/defaults.py:103
+msgid "Certificate"
+msgstr "Attestation"
+
 #: apps/search/defaults.py:116
+msgid "Subjects"
+msgstr "Sujets"
+
+#: apps/search/defaults.py:129
 msgid "Persons"
 msgstr "Personnes"
 
