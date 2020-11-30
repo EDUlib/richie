@@ -82,6 +82,7 @@ FILTERS_CONFIGURATION = [
             "name": "subjects",
             "position": 1,
             "reverse_id": "subjects",
+            "term": "categories",
         },
     ),
     (
