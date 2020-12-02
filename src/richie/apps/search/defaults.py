@@ -88,13 +88,13 @@ FILTERS_CONFIGURATION = [
     (
         "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
         {
-            "human_name": _("Hosted by"),
+            "human_name": _("Host"),
             "is_autocompletable": True,
             "is_searchable": True,
             "min_doc_count": 0,
-            "name": "hostedby",
+            "name": "host",
             "position": 4,
-            "reverse_id": "hostedby",
+            "reverse_id": "host",
             "term": "categories",
         },
     ),
