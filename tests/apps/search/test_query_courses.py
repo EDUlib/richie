@@ -29,7 +29,6 @@ COURSES = [
                 "ac turpis egestas. Integer ut eleifend massa."
             )
         },
-        "is_new": True,
         "is_listed": True,
         "organization_highlighted": {"en": "Org 311"},
         "organizations": ["P-00030001", "P-00030004", "L-000300010001"],
@@ -49,7 +48,6 @@ COURSES = [
                 "lobortis eget justo."
             )
         },
-        "is_new": True,
         "is_listed": True,
         "organization_highlighted": {"en": "Org 33"},
         "organizations": ["P-00030001", "P-00030003", "L-000300010002"],
@@ -69,7 +67,6 @@ COURSES = [
                 "ipsum, dignissim at augue."
             )
         },
-        "is_new": False,
         "is_listed": True,
         "organization_highlighted": {"en": "Org 321"},
         "organizations": ["P-00030002", "P-00030003", "L-000300020001"],
@@ -88,7 +85,6 @@ COURSES = [
                 "Artificial vulputate neque placerat, commodo quam gravida, maximus lectus."
             )
         },
-        "is_new": False,
         "is_listed": True,
         "organization_highlighted": {"en": "Org 34"},
         "organizations": ["P-00030002", "P-00030004", "L-000300020002"],
@@ -209,7 +205,7 @@ class CourseRunsCoursesQueryTestCase(TestCase):
     @staticmethod
     def reset_filter_definitions_cache():
         """Reset indexable filters cache on the `base_page` field."""
-        for filter_name in ["levels", "subjects", "organizations"]:
+        for filter_name in ["subjects", "organizations"]:
             # pylint: disable=protected-access
             FILTERS[filter_name]._base_page = None
 
@@ -223,7 +219,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
             - organizations page path: 0003
         """
         CategoryFactory(page_reverse_id="subjects", should_publish=True)
-        CategoryFactory(page_reverse_id="levels", should_publish=True)
         OrganizationFactory(page_reverse_id="organizations", should_publish=True)
 
     @staticmethod
@@ -479,46 +474,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
                             {"count": 2, "human_name": "#fr", "key": "fr"},
                         ],
                     },
-                    "levels": {
-                        "base_path": "0002",
-                        "has_more_values": False,
-                        "human_name": "Levels",
-                        "is_autocompletable": True,
-                        "is_drilldown": False,
-                        "is_searchable": True,
-                        "name": "levels",
-                        "position": 3,
-                        "values": [
-                            {
-                                "count": 2,
-                                "human_name": "#L-00020001",
-                                "key": "L-00020001",
-                            },
-                            {
-                                "count": 1,
-                                "human_name": "#L-00020002",
-                                "key": "L-00020002",
-                            },
-                            {
-                                "count": 1,
-                                "human_name": "#L-00020003",
-                                "key": "L-00020003",
-                            },
-                        ],
-                    },
-                    "new": {
-                        "base_path": None,
-                        "has_more_values": False,
-                        "human_name": "New courses",
-                        "is_autocompletable": False,
-                        "is_drilldown": False,
-                        "is_searchable": False,
-                        "name": "new",
-                        "position": 0,
-                        "values": [
-                            {"count": 2, "human_name": "First session", "key": "new"}
-                        ],
-                    },
                     "organizations": {
                         "base_path": "0003",
                         "has_more_values": False,
@@ -745,14 +700,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
             ],
         )
         self.assertEqual(
-            content["filters"]["levels"]["values"],
-            [
-                {"count": 1, "human_name": "#L-00020001", "key": "L-00020001"},
-                {"count": 1, "human_name": "#L-00020003", "key": "L-00020003"},
-                {"count": 0, "human_name": "#L-00020002", "key": "L-00020002"},
-            ],
-        )
-        self.assertEqual(
             content["filters"]["organizations"]["values"],
             [
                 {"count": 2, "human_name": "#P-00030001", "key": "P-00030001"},
@@ -870,14 +817,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
             ],
         )
         self.assertEqual(
-            content["filters"]["levels"]["values"],
-            [
-                {"count": 2, "human_name": "#L-00020001", "key": "L-00020001"},
-                {"count": 1, "human_name": "#L-00020002", "key": "L-00020002"},
-                {"count": 0, "human_name": "#L-00020003", "key": "L-00020003"},
-            ],
-        )
-        self.assertEqual(
             content["filters"]["organizations"]["values"],
             [
                 {"count": 2, "human_name": "#P-00030002", "key": "P-00030002"},
@@ -969,14 +908,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
             ],
         )
         self.assertEqual(
-            content["filters"]["levels"]["values"],
-            [
-                {"count": 1, "human_name": "#L-00020001", "key": "L-00020001"},
-                {"count": 1, "human_name": "#L-00020002", "key": "L-00020002"},
-                {"count": 0, "human_name": "#L-00020003", "key": "L-00020003"},
-            ],
-        )
-        self.assertEqual(
             content["filters"]["organizations"]["values"],
             [
                 {"count": 2, "human_name": "#P-00030004", "key": "P-00030004"},
@@ -984,19 +915,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
                 {"count": 1, "human_name": "#P-00030002", "key": "P-00030002"},
                 {"count": 0, "human_name": "#P-00030003", "key": "P-00030003"},
             ],
-        )
-
-    def test_query_courses_filter_new(self, *_):
-        """
-        Battle test filtering new courses.
-        """
-        courses_definition, content = self.execute_query("new=new")
-        # Keep only the courses that are new:
-        courses_definition = filter(lambda c: c[0] in [0, 1], courses_definition)
-
-        self.assertEqual(
-            list([int(c["id"]) for c in content["objects"]]),
-            self.get_expected_courses(courses_definition, list(COURSE_RUNS)),
         )
 
     def test_query_courses_filter_organization(self, *_):
@@ -1101,34 +1019,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
             ],
         )
 
-    def test_query_courses_filter_level(self, *_):
-        """
-        Battle test filtering by a level.
-        """
-        courses_definition, content = self.execute_query("levels=L-00020001")
-        # Keep only the courses that are linked to level L-00020001:
-        courses_definition = filter(lambda c: c[0] in [0, 2], courses_definition)
-
-        self.assertEqual(
-            list([int(c["id"]) for c in content["objects"]]),
-            self.get_expected_courses(courses_definition, list(COURSE_RUNS)),
-        )
-
-    def test_query_courses_filter_multiple_levels(self, *_):
-        """
-        Battle test filtering by multiple levels.
-        """
-        courses_definition, content = self.execute_query(
-            "levels=L-00020001&levels=L-00020002"
-        )
-        # Keep only the courses that are linked to levels L-00020001 or L-00020002:
-        courses_definition = filter(lambda c: c[0] in [0, 2, 3], courses_definition)
-
-        self.assertEqual(
-            list([int(c["id"]) for c in content["objects"]]),
-            self.get_expected_courses(courses_definition, list(COURSE_RUNS)),
-        )
-
     def test_query_courses_match_all_no_filter_pages(self, *_):
         """
         Running a query when indexable filter pages are absent should result in empty facets.
@@ -1137,7 +1027,6 @@ class CourseRunsCoursesQueryTestCase(TestCase):
         """
         _, content = self.execute_query()
         self.assertEqual(content["filters"]["subjects"]["values"], [])
-        self.assertEqual(content["filters"]["levels"]["values"], [])
         self.assertEqual(content["filters"]["organizations"]["values"], [])
 
     def test_query_courses_by_related_person(self, *_):

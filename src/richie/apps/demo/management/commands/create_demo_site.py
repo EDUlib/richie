@@ -255,7 +255,6 @@ def create_demo_site():
             page_in_navigation=True,
             page_languages=["en", "fr"],
             page_parent=pages_created["courses"],
-            fill_licences=course_licences,
             fill_team=random.sample(
                 eligible_persons,
                 min(
@@ -274,14 +273,9 @@ def create_demo_site():
             ],
             fill_icons=random.sample(icons, get_number_of_icons()),
             fill_organizations=course_organizations,
-            fill_plan=True,
             fill_texts=[
-                "course_assessment",
                 "course_description",
                 "course_introduction",
-                "course_format",
-                "course_prerequisites",
-                "course_skills",
             ],
         )
         course.create_permissions_for_organization(course_organizations[0])

@@ -88,9 +88,21 @@ FILTERS_CONFIGURATION = [
     (
         "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
         {
-            "human_name": _("Host"),
+            "human_name": _("Organizations"),
             "is_autocompletable": True,
             "is_searchable": True,
+            "min_doc_count": 0,
+            "name": "organizations",
+            "position": 2,
+            "reverse_id": "organizations",
+        },
+    ),
+    (
+        "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
+        {
+            "human_name": _("Host"),
+            "is_autocompletable": False,
+            "is_searchable": False,
             "min_doc_count": 0,
             "name": "host",
             "position": 4,
@@ -102,25 +114,13 @@ FILTERS_CONFIGURATION = [
         "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
         {
             "human_name": _("Certificate"),
-            "is_autocompletable": True,
-            "is_searchable": True,
+            "is_autocompletable": False,
+            "is_searchable": False,
             "min_doc_count": 0,
             "name": "certificate",
             "position": 5,
             "reverse_id": "certificate",
             "term": "categories",
-        },
-    ),
-    (
-        "richie.apps.search.filter_definitions.IndexableMPTTFilterDefinition",
-        {
-            "human_name": _("Organizations"),
-            "is_autocompletable": True,
-            "is_searchable": True,
-            "min_doc_count": 0,
-            "name": "organizations",
-            "position": 2,
-            "reverse_id": "organizations",
         },
     ),
     (

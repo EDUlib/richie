@@ -60,15 +60,6 @@ class FilterDefinitionsViewTestCase(CMSTestCase):
         self.assertEqual(
             json.loads(response.content),
             {
-                "new": {
-                    "base_path": None,
-                    "human_name": "New courses",
-                    "is_autocompletable": False,
-                    "is_drilldown": False,
-                    "is_searchable": False,
-                    "name": "new",
-                    "position": 0,
-                },
                 "availability": {
                     "base_path": None,
                     "human_name": "Availability",
@@ -87,15 +78,6 @@ class FilterDefinitionsViewTestCase(CMSTestCase):
                     "name": "subjects",
                     "position": 2,
                 },
-                "levels": {
-                    "base_path": "00030002",
-                    "human_name": "Levels",
-                    "is_autocompletable": True,
-                    "is_drilldown": False,
-                    "is_searchable": True,
-                    "name": "levels",
-                    "position": 3,
-                },
                 "organizations": {
                     "base_path": "0001",
                     "human_name": "Organizations",
@@ -103,7 +85,7 @@ class FilterDefinitionsViewTestCase(CMSTestCase):
                     "is_drilldown": False,
                     "is_searchable": True,
                     "name": "organizations",
-                    "position": 4,
+                    "position": 3,
                 },
                 "languages": {
                     "base_path": None,
@@ -112,7 +94,25 @@ class FilterDefinitionsViewTestCase(CMSTestCase):
                     "is_drilldown": False,
                     "is_searchable": False,
                     "name": "languages",
+                    "position": 4,
+                },
+                "host": {
+                    "base_path": None,
+                    "human_name": "Host",
+                    "is_autocompletable": False,
+                    "is_drilldown": False,
+                    "is_searchable": False,
+                    "name": "host",
                     "position": 5,
+                },
+                "certificate": {
+                    "base_path": None,
+                    "human_name": "certificate",
+                    "is_autocompletable": False,
+                    "is_drilldown": False,
+                    "is_searchable": False,
+                    "name": "certificate",
+                    "position": 6,
                 },
                 "persons": {
                     "base_path": "0002",
@@ -121,26 +121,11 @@ class FilterDefinitionsViewTestCase(CMSTestCase):
                     "is_drilldown": False,
                     "is_searchable": True,
                     "name": "persons",
-                    "position": 5,
+                    "position": 7,
                 },
             },
         )
 
-    @mock.patch.object(
-        FILTERS["new"],
-        "get_static_definitions",
-        return_value={
-            "new": {
-                "base_path": None,
-                "human_name": "New courses",
-                "is_autocompletable": False,
-                "is_drilldown": False,
-                "is_searchable": False,
-                "name": "new",
-                "position": 0,
-            }
-        },
-    )
     def test_views_filter_definitions_is_cached(self, mock_get_static_definitions):
         """
         Make sure we don't re-build the static filter definitions with each call.
