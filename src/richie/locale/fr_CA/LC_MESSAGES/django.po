@@ -147,7 +147,7 @@ msgstr "Cette page n'a pas d'objets enfants"
 
 #: apps/core/templates/richie/error.html:17
 msgid "Back to home"
-msgstr ""
+msgstr "Retour à la page d'accueil"
 
 #: apps/core/templates/richie/pagination.html:5
 msgid "Pagination"
@@ -242,35 +242,35 @@ msgstr "Linkedin"
 
 #: apps/core/views/error.py:7
 msgid "Bad request"
-msgstr ""
+msgstr "Requête incorrecte"
 
 #: apps/core/views/error.py:9
 msgid "Your query seems to be malformed. Please check your data and try again."
-msgstr ""
+msgstr "Votre requête semble être incorrecte. Veuillez vérifier les informations envoyées et réessayer."
 
 #: apps/core/views/error.py:13
 msgid "Forbidden"
-msgstr ""
+msgstr "Interdit"
 
 #: apps/core/views/error.py:15
 msgid "You do not have the required permissions to access this resource."
-msgstr ""
+msgstr "Vous n'avez pas les permissions requises pour accéder à ce contenu."
 
 #: apps/core/views/error.py:19
 msgid "Page not found"
-msgstr ""
+msgstr "Page introuvable"
 
 #: apps/core/views/error.py:20
 msgid "The requested resource does not exist."
-msgstr ""
+msgstr "Le contenu demandé n'existe pas."
 
 #: apps/core/views/error.py:23
 msgid "Server bad request"
-msgstr ""
+msgstr "Requête incorrecte au serveur"
 
 #: apps/core/views/error.py:24
 msgid "Something went wrong. Please try again later."
-msgstr ""
+msgstr "Une erreur s'est produite. Merci de réessayer plus tard."
 
 #: apps/courses/admin.py:271
 msgid "Course could not be found."
@@ -376,11 +376,11 @@ msgstr "Vous devez d’abord créer une page parente dont le 'reverse_id' est la
 
 #: apps/courses/cms_wizards.py:179
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: apps/courses/cms_wizards.py:180 apps/courses/models/course.py:142
 msgid "Unique reference for the course."
-msgstr ""
+msgstr "Référence unique du cours."
 
 #: apps/courses/cms_wizards.py:269
 msgid "New course page"
@@ -636,15 +636,15 @@ msgstr "cours"
 
 #: apps/courses/models/course.py:546
 msgid "Manual"
-msgstr ""
+msgstr "Manuel"
 
 #: apps/courses/models/course.py:547
 msgid "Synchronization to draft page"
-msgstr ""
+msgstr "Synchronisation de la page brouillon"
 
 #: apps/courses/models/course.py:548
 msgid "Synchronization to public page"
-msgstr ""
+msgstr "Synchronisation de la page publique"
 
 #: apps/courses/models/course.py:578
 msgid "resource link"
