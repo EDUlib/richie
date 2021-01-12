@@ -30,11 +30,12 @@ class CourseSearchFormTestCase(TestCase):
             form.cleaned_data,
             {
                 "availability": [],
+                'certificate': [],
+                'certificate_include': '',
+                'host': [],
+                'host_include': '',
                 "languages": [],
-                "levels": [],
-                "levels_include": "",
                 "limit": None,
-                "new": [],
                 "offset": None,
                 "organizations": [],
                 "organizations_include": "",
@@ -118,10 +119,7 @@ class CourseSearchFormTestCase(TestCase):
                 query_string=(
                     "availability=coming_soon"
                     "&languages=fr"
-                    "&levels=1"
-                    "&levels_include=.*"
                     "&limit=9"
-                    "&new=new"
                     "&offset=3"
                     "&organizations=10"
                     "&organizations_include=.*"
@@ -137,11 +135,12 @@ class CourseSearchFormTestCase(TestCase):
             form.cleaned_data,
             {
                 "availability": ["coming_soon"],
+                'certificate': [],
+                'certificate_include': '',
+                'host': [],
+                'host_include': '',
                 "languages": ["fr"],
-                "levels": ["1"],
-                "levels_include": ".*",
                 "limit": 9,
-                "new": ["new"],
                 "offset": 3,
                 "organizations": ["10"],
                 "organizations_include": ".*",
@@ -166,11 +165,8 @@ class CourseSearchFormTestCase(TestCase):
                     "&availability=ongoing"
                     "&languages=fr"
                     "&languages=en"
-                    "&levels=1"
-                    "&levels=2"
                     "&limit=9"
                     "&limit=11"
-                    "&new=new"
                     "&offset=3"
                     "&offset=17"
                     "&organizations=10"
@@ -190,11 +186,12 @@ class CourseSearchFormTestCase(TestCase):
             form.cleaned_data,
             {
                 "availability": ["coming_soon", "ongoing"],
+                'certificate': [],
+                'certificate_include': '',
+                'host': [],
+                'host_include': '',
                 "languages": ["fr", "en"],
-                "levels": ["1", "2"],
-                "levels_include": "",
                 "limit": 9,
-                "new": ["new"],
                 "offset": 3,
                 "organizations": ["10", "11"],
                 "organizations_include": "",

@@ -319,56 +319,6 @@ class CourseFactory(PageExtensionDjangoModelFactory):
 
     @factory.post_generation
     # pylint: disable=unused-argument
-    def fill_licences(self, create, extracted, **kwargs):
-        """
-        Add licence plugin for course licence placeholders from given licence
-        instance list
-        """
-        if create and extracted:
-            for language in self.extended_object.get_languages():
-                for slot, licence in extracted:
-                    placeholder = self.extended_object.placeholders.get(slot=slot)
-                    add_plugin(
-                        language=language,
-                        placeholder=placeholder,
-                        plugin_type="LicencePlugin",
-                        **{"licence": licence},
-                    )
-
-    @factory.post_generation
-    # pylint: disable=unused-argument
-    def fill_plan(self, create, extracted, **kwargs):
-        """Add a course plan composed of random nested items."""
-        if create and extracted:
-            for language in self.extended_object.get_languages():
-                placeholder = self.extended_object.placeholders.get(slot="course_plan")
-                container = add_plugin(
-                    language=language,
-                    placeholder=placeholder,
-                    plugin_type="NestedItemPlugin",
-                    variant=ACCORDION,
-                )
-                for chapter in range(random.randint(2, 4)):  # nosec
-                    chapter_plugin = add_plugin(
-                        language=language,
-                        placeholder=placeholder,
-                        plugin_type="NestedItemPlugin",
-                        target=container,
-                        content=f"Chapter {chapter:d}",
-                        variant=ACCORDION,
-                    )
-                    for part in range(random.randint(2, 4)):  # nosec
-                        add_plugin(
-                            language=language,
-                            placeholder=placeholder,
-                            plugin_type="NestedItemPlugin",
-                            target=chapter_plugin,
-                            content=f"Part {part:d}",
-                            variant=ACCORDION,
-                        )
-
-    @factory.post_generation
-    # pylint: disable=unused-argument
     def fill_texts(self, create, extracted, **kwargs):
         """
         A shortand to fill some placeholder content with a text plugin.

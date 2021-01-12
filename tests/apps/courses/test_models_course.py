@@ -288,7 +288,7 @@ class CourseModelsTestCase(TestCase):
         placeholder1 = course.extended_object.placeholders.get(
             slot="course_description"
         )
-        placeholder2 = course.extended_object.placeholders.get(slot="course_format")
+        placeholder2 = course.extended_object.placeholders.get(slot="course_information")
 
         add_plugin(
             language="en",
@@ -383,7 +383,7 @@ class CourseModelsTestCase(TestCase):
         placeholder1 = course.extended_object.placeholders.get(
             slot="course_description"
         )
-        placeholder2 = course.extended_object.placeholders.get(slot="course_format")
+        placeholder2 = course.extended_object.placeholders.get(slot="course_information")
 
         add_plugin(
             language="en",
@@ -511,7 +511,7 @@ class CourseModelsTestCase(TestCase):
         placeholder1 = course.extended_object.placeholders.get(
             slot="course_description"
         )
-        placeholder2 = course.extended_object.placeholders.get(slot="course_format")
+        placeholder2 = course.extended_object.placeholders.get(slot="course_information")
 
         add_plugin(
             language="en",

@@ -15,10 +15,10 @@ class FilterDefintionsTestCase(TestCase):
 
     def test_filter_definitions_indexable_filter_aggs_include_no_page(self):
         """
-        The indexable filters (subjects, levels and organizations) should return a regex matching
+        The indexable filters (subjects and organizations) should return a regex matching
         nothing if the corresponding filter pages have not been created.
         """
-        for filter_name in ["levels", "subjects", "organizations"]:
+        for filter_name in ["subjects", "organizations"]:
             with self.assertNumQueries(1):
                 self.assertEqual(FILTERS[filter_name].aggs_include, "")
 
@@ -28,10 +28,10 @@ class FilterDefintionsTestCase(TestCase):
 
     def test_filter_definitions_indexable_filter_aggs_include_draft_page(self):
         """
-        The indexable filters (subjects, levels and organizations) should return a regex matching
+        The indexable filters (subjects and organizations) should return a regex matching
         nothing if the corresponding filter pages are not published.
         """
-        for filter_name in ["levels", "subjects", "organizations"]:
+        for filter_name in ["subjects", "organizations"]:
             CategoryFactory(page_reverse_id=filter_name)
 
             with self.assertNumQueries(1):
@@ -43,10 +43,10 @@ class FilterDefintionsTestCase(TestCase):
 
     def test_filter_definitions_indexable_filter_aggs_include_published_page(self):
         """
-        The indexable filters (subjects, levels and organizations) should return a regex matching
+        The indexable filters (subjects and organizations) should return a regex matching
         only the parent objects if the corresponding filter pages exist and are published.
         """
-        for index, filter_name in enumerate(["levels", "subjects", "organizations"]):
+        for index, filter_name in enumerate(["subjects", "organizations"]):
             CategoryFactory(page_reverse_id=filter_name, should_publish=True)
 
             with self.assertNumQueries(1):

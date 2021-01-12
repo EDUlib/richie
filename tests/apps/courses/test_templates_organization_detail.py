@@ -297,29 +297,3 @@ class OrganizationCMSTestCase(CMSTestCase):
             ),
             re.sub(" +", " ", str(response.content).replace("\\n", "")),
         )
-
-    def test_templates_organization_detail_related_persons(self):
-        """
-        Persons related to an organization via a plugin should appear on the organization
-        detail page.
-        """
-        user = UserFactory(is_staff=True, is_superuser=True)
-        self.client.login(username=user.username, password="password")
-
-        organization = OrganizationFactory()
-        person = PersonFactory(fill_organizations=[organization])
-        page = organization.extended_object
-
-        url = page.get_absolute_url()
-        response = self.client.get(url)
-
-        # The person should be present on the page
-        pattern = (
-            r'<a href="{url:s}">'
-            r'<h3 class="person-glimpse__title">'
-            r".*{name:s}.*</h3></a>"
-        ).format(
-            url=person.extended_object.get_absolute_url(),
-            name=person.extended_object.get_title(),
-        )
-        self.assertIsNotNone(re.search(pattern, str(response.content)))
